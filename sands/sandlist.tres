@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="SandList" load_steps=10 format=3 uid="uid://o1avrurs8fwv"]
+
+[ext_resource type="Script" path="res://sandTypeData.gd" id="1_eqqoq"]
+[ext_resource type="Script" path="res://sandholder.gd" id="1_k77bn"]
+
+[sub_resource type="Resource" id="Resource_2lw8s"]
+script = ExtResource("1_eqqoq")
+sand_id = 0
+sand_type = 0
+generator_type = -1
+sand_special = 0
+custom_value = 0.0
+sand_name = " EMPTY"
+sand_always_place = true
+
+[sub_resource type="Resource" id="Resource_7pbf0"]
+script = ExtResource("1_eqqoq")
+sand_id = 1
+sand_type = 1
+generator_type = -1
+sand_special = 0
+custom_value = 0.9
+sand_name = "Sand"
+sand_always_place = false
+
+[sub_resource type="Resource" id="Resource_kimrn"]
+script = ExtResource("1_eqqoq")
+sand_id = 5
+sand_type = 2
+generator_type = -1
+sand_special = 0
+custom_value = 0.0
+sand_name = " Water"
+sand_always_place = false
+
+[sub_resource type="Resource" id="Resource_wt6yi"]
+script = ExtResource("1_eqqoq")
+sand_id = 2
+sand_type = 0
+generator_type = -1
+sand_special = 0
+custom_value = 0.0
+sand_name = "Block"
+sand_always_place = true
+
+[sub_resource type="Resource" id="Resource_65ktx"]
+script = ExtResource("1_eqqoq")
+sand_id = 3
+sand_type = 3
+generator_type = -1
+sand_special = 0
+custom_value = 512.0
+sand_name = " STEAM"
+sand_always_place = false
+
+[sub_resource type="Resource" id="Resource_76576"]
+script = ExtResource("1_eqqoq")
+sand_id = 4
+sand_type = 3
+generator_type = -1
+sand_special = 0
+custom_value = 512.0
+sand_name = " FIRE"
+sand_always_place = false
+
+[sub_resource type="Resource" id="Resource_sb1ca"]
+script = ExtResource("1_eqqoq")
+sand_id = 6
+sand_type = 0
+generator_type = 256
+sand_special = 4
+custom_value = 0.0
+sand_name = "Torch"
+sand_always_place = true
+
+[resource]
+script = ExtResource("1_k77bn")
+sands = Array[ExtResource("1_eqqoq")]([SubResource("Resource_2lw8s"), SubResource("Resource_7pbf0"), SubResource("Resource_kimrn"), SubResource("Resource_wt6yi"), SubResource("Resource_65ktx"), SubResource("Resource_76576"), SubResource("Resource_sb1ca")])

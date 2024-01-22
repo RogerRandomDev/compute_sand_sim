@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cadymco0puky2"
+path="res://.godot/imported/compute_sand.glsl-bb9f51ae27a5fd193c3a496454bf45d4.res"
+
+[deps]
+
+source_file="res://compute_sand.glsl"
+dest_files=["res://.godot/imported/compute_sand.glsl-bb9f51ae27a5fd193c3a496454bf45d4.res"]
+
+[params]
+

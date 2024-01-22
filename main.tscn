@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjlin7g215klv"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ps5i3"]
+[ext_resource type="Script" path="res://interface.gd" id="2_0spep"]
+[ext_resource type="Script" path="res://draw_render_method.gd" id="2_d6ed7"]
+[ext_resource type="Resource" uid="uid://o1avrurs8fwv" path="res://sands/sandlist.tres" id="3_0i47b"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_bv2ti"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ps5i3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 1
+texture_repeat = 1
+texture = SubResource("Texture2DRD_bv2ti")
+centered = false
+script = ExtResource("2_d6ed7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Control" type="Control" parent="."]
+z_index = 4
+custom_minimum_size = Vector2(160, 640)
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 640.0
+offset_top = -1.0
+offset_right = 800.0
+offset_bottom = 639.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+script = ExtResource("2_0spep")
+list = ExtResource("3_0i47b")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ItemList" type="ItemList" parent="Control"]
+clip_contents = false
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control"]
+show_behind_parent = true
+z_index = 5
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(80, 560)
+texture = SubResource("Texture2DRD_bv2ti")
+region_enabled = true
+
+[node name="Popup" type="ConfirmationDialog" parent="."]
+title = "Quality"
+initial_position = 4
+size = Vector2i(398, 132)
+visible = true
+ok_button_text = "Max"
+dialog_text = "Max is 1024x1024
+reccomended is 640x640"
+cancel_button_text = "Reccomended"
+
+[connection signal="canceled" from="Popup" to="." method="_on_popup_canceled"]
+[connection signal="confirmed" from="Popup" to="." method="_on_popup_confirmed"]
